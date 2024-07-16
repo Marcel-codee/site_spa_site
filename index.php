@@ -26,6 +26,10 @@ if(!in_array($page,['home','about','service','blog','contact'])){
     if(FileExist($page,[$controllersPagesAdmin,$viewsPagesAdmin])){
         require_once('./controllers/admin/' . $page . '.controller.php');
         if($page=="___spa___admin" || $connecter){
+            if($connecter && $page=="___spa___admin"){
+                #Redirige si dejà connecter et il veut se connecter à nouveau
+                header('Location:' . LINK . '___dashboard');
+            }
             #Espace admin
             include('./includes/admin/head.php');
             require_once('./views/admin/'. $page . '.view.php');
