@@ -25,14 +25,20 @@ if(!in_array($page,['home','about','service','blog','contact'])){
     $connecter=isset($_SESSION['userConnect']['login']);
     if(FileExist($page,[$controllersPagesAdmin,$viewsPagesAdmin])){
         require_once('./controllers/admin/' . $page . '.controller.php');
+        include('./includes/admin/head.php');
         if($page=="___spa___admin" || $connecter){
             if($connecter && $page=="___spa___admin"){
                 #Redirige si dejà connecter et il veut se connecter à nouveau
                 header('Location:' . LINK . '___dashboard');
             }
             #Espace admin
-            include('./includes/admin/head.php');
+            if($connecter){
+                include('./includes/admin/pre-loader.php');
+                include('./includes/admin/header.php');
+                include('./includes/admin/side_bar.php');
+            }
             require_once('./views/admin/'. $page . '.view.php');
+            include('./includes/admin/js.php');
             die();
         }
         header('Location:' . LINK .'');

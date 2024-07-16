@@ -61,10 +61,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- js -->
-	<script src="<?= LINK ?>assets/admin/vendors/scripts/core.js"></script>
-	<script src="<?= LINK ?>assets/admin/vendors/scripts/script.min.js"></script>
-	<script src="<?= LINK ?>assets/admin/vendors/scripts/process.js"></script>
-	<script src="<?= LINK ?>assets/admin/vendors/scripts/layout-settings.js"></script>
-</body>
-</html>
