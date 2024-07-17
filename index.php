@@ -38,6 +38,9 @@ if(!in_array($page,['home','about','service','blog','contact'])){
                 include('./includes/admin/side_bar.php');
             }
             require_once('./views/admin/'. $page . '.view.php');
+            if($connecter){
+                include('./includes/admin/footer.php');
+            }
             include('./includes/admin/js.php');
             die();
         }
