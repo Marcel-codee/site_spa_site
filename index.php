@@ -18,7 +18,6 @@ if (!empty($_GET['page'])) {
 // }
 
 
-
 if(!in_array($page,['home','about','service','blog','contact'])){
     $controllersPagesAdmin = scandir('./'.'controllers'.'/admin');
     $viewsPagesAdmin = scandir('./'.'views'.'/admin');

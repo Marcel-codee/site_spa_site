@@ -112,9 +112,9 @@
 						<span class="user-name"><?php echo $_SESSION['userConnect']['login'] ?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="<?= LINK ?>___profile"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Reglage</a>
-						<a class="dropdown-item" href="<?php echo LINK ?>"><i class="dw dw-eye"></i> Voir site</a>
+						<a class="dropdown-item" target="_blank" href="<?php echo LINK ?>"><i class="dw dw-eye"></i> Voir site</a>
 						<a class="dropdown-item" href="<?php echo LINK ?>___logout"><i class="dw dw-logout"></i> Se deconnecter</a>
 					</div>
 				</div>
