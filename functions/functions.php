@@ -135,3 +135,33 @@ function inputred($fild)
 function FileExist(string $nom_file,array $contenant_file) :bool{
    return in_array($nom_file . '.controller.php', $contenant_file[0]) && in_array($nom_file . '.view.php', $contenant_file[1]);
 }
+
+/**
+ * Fonction pour uploader un fichier
+ */
+function __files($type){
+   if(isset($_FILES[$type]['name'])){
+      /* Getting file name */
+      $filename = $_FILES[$type]['name'];
+   
+      /* Location */
+      $location = 'upload/'.$filename;
+      $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
+      $imageFileType = strtolower($imageFileType);
+   
+      /* Valid extensions */
+      $valid_extensions = array("jpg","jpeg","png", "pdf", "docx");
+   
+      $response = 0;
+      /* Check file extension */
+      if(in_array(strtolower($imageFileType), $valid_extensions)) {
+         /* Upload file */
+         if(move_uploaded_file($_FILES[$type]['tmp_name'],$location)){
+            $response = $location;
+         }
+      }
+   
+      echo $response;
+     return $_FILES[$type]['name'];
+   }   
+}

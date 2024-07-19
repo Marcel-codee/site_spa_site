@@ -1,8 +1,3 @@
-	<?= 
-		include('./includes/admin/pre-loader.php');
-		include('./includes/admin/header.php');
-		include('./includes/admin/side_bar.php');
-	?>
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
