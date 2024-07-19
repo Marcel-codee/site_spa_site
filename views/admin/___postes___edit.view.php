@@ -7,12 +7,12 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4>Ajout Poste</h4>
+                            <h4>Modification d'un poste</h4>
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?= LINK ?>___postes">Liste des postes</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Poste</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modification du poste</li>
                             </ol>
                         </nav>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="clearfix">
                     <div class="pull-left">
                         <h4 class="text-blue h4">Poste</h4>
-                        <p class="mb-30">Ajout d'un poste</p>
+                        <p class="mb-30">Modification du poste</p>
                     </div>
                 </div>
                 <form method="POST" action="">
@@ -36,11 +36,11 @@
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Nom</label>
                         <div class="col-sm-12 col-md-10">
-                            <input name="libelle" class="form-control" type="text" placeholder="Nom du poste">
+                            <input name="libelle" class="form-control" type="text" placeholder="Nom du poste" value="<?=isset($post['libelle'])?$post['libelle']:''?>">
                         </div>
                     </div>
                     <div class="btn-list">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Ajouter</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Modifier</button>
                     </div>
                 </form>
             </div>
