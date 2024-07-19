@@ -7,6 +7,9 @@ include './config/db.php';
 include './Autoloader.php';
 include './functions/functions.php';
 
+$success = "";
+$error = "";
+
 Autoloader::register();
 if (!empty($_GET['page'])) {
     $page = $_GET['page'];
@@ -59,6 +62,7 @@ if(!in_array($page,['home','about','service','blog','contact'])){
     if(FileExist($page,[$controllersPagesVisitor,$viewsPagesVisitor])){
         #Espace visitor
         require_once('./controllers/visitor/' . $page . '.controller.php');
+        require_once('./controllers/visitor/caroussel.controller.php');
         include('./includes/visitor/head.php');
         include ('./includes/visitor/brand.php');
         include ('./includes/visitor/navbar.php');
