@@ -26,23 +26,29 @@
                         <p class="mb-30">Ajout d'un administrateur</p>
                     </div>
                 </div>
-                <form>
+                <form method="POST" action="">
+                    <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger p-1"><?= $error ?></div>
+                    <?php elseif (!empty($success)): ?>
+                        <div class="alert alert-success p-1"><?= $success ?></div>
+                    <?php else: ?>
+                    <?php endif; ?>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Login</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" type="text" placeholder="Login">
+                            <input name="login" class="form-control" type="text" placeholder="Login">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Mot de passe</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="password" type="password">
+                            <input name="password" class="form-control" type="password">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Identifiant employé</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="100" type="number">
+                            <input name="idpersonne" class="form-control" type="number">
                         </div>
                     </div>
                     <div class="btn-list">

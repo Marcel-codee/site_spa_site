@@ -54,7 +54,7 @@
 						<span class="badge notification-active"></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<div class="notification-list mx-h-350 customscroll">
+						<!-- <div class="notification-list mx-h-350 customscroll">
 							<ul>
 								<li>
 									<a href="#">
@@ -99,7 +99,7 @@
 									</a>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -113,14 +113,14 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="<?= LINK ?>___profile"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Reglage</a>
+						<!-- <a class="dropdown-item" href=""><i class="dw dw-settings2"></i> Reglage</a> -->
 						<a class="dropdown-item" target="_blank" href="<?php echo LINK ?>"><i class="dw dw-eye"></i> Voir site</a>
 						<a class="dropdown-item" href="<?php echo LINK ?>___logout"><i class="dw dw-logout"></i> Se deconnecter</a>
 					</div>
 				</div>
 			</div>
 			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="<?= LINK?>assets/admin/vendors/images/github.svg" alt=""></a>
+				<a href="<?= LINK ?>" target="_blank"><img src="" alt=""></a>
 			</div>
 		</div>
 	</div>

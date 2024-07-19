@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if ($imagePath) {
         $_POST['photo'] = $imagePath;
     }
+    $_POST['status']=1;
     extract($_POST);
     try{
         #Ajout d'un employé

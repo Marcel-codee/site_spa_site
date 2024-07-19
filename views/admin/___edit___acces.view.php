@@ -26,23 +26,29 @@
                         <p class="mb-30">Modification du mot de passe</p>
                     </div>
                 </div>
-                <form>
+                <form method="POST" action="">
+                <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger p-1"><?= $error ?></div>
+                    <?php elseif (!empty($success)): ?>
+                        <div class="alert alert-success p-1"><?= $success ?></div>
+                    <?php else: ?>
+                    <?php endif; ?>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Ancien mot de passe</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="password" type="password">
+                            <input name="password" class="form-control" placeholder="ancien mot de passe" type="password">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Nouveau mot de passe</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="password" type="password">
+                            <input name="passwordNew1" class="form-control" placeholder="nouveau mot de passe" type="password">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Retapper nouveau mot de passe</label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="password" type="password">
+                            <input name="passwordNew2" class="form-control" placeholder="confirmé nouveau mot de passe" type="password">
                         </div>
                     </div>
                     <div class="btn-list">

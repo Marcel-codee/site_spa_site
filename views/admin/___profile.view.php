@@ -22,10 +22,12 @@
                                 >
                                 Ajouter un administrateur
                             </a>
-                            <a class="btn btn-secondary " href="<?= LINK ?>___edit___acces" role="button"
+                            <?php if(isset($_SESSION['userConnect']['id'])):  ?>
+                            <a class="btn btn-secondary " href="<?= LINK ?>___edit___acces/<?=$_SESSION['userConnect']['id']?>" role="button"
                                 >
                                 Modifier mes informations
                             </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -36,6 +38,12 @@
                     <h4 class="text-blue h4">Liste de nos administrateurs</h4>
                 </div>
                 <div class="pb-20">
+                    <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger p-1"><?= $error ?></div>
+                    <?php elseif (!empty($success)): ?>
+                        <div class="alert alert-success p-1"><?= $success ?></div>
+                    <?php else: ?>
+                    <?php endif; ?>
                     <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
@@ -47,12 +55,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php var_dump($les_admin) ?>
+                            <?php foreach($les_admin as $k=>$admin): ?>
                             <tr>
-                                <td class="table-plus">Gloria F. Mead</td>
-                                <td>25</td>
-                                <td>Sagittarius</td>
-                                <td>2829 Trainer Avenue Peoria, IL 61602 </td>
+                                <td class="table-plus"><?=$k++?></td>
+                                <td><?=$admin['prenom']?></td>
+                                <td><?=$admin['nom']?></td>
+                                <td><?=$admin['telephone']?></td>
                                 <td>
                                     <div class="dropdown">
                                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -60,14 +68,14 @@
                                             <i class="dw dw-more"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
-                                                Delete</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> Voir</a>
+                                            <a class="dropdown-item" href="<?= LINK ?>___delete___admin/<?=$admin['id']?>"><i class="dw dw-delete-3"></i>
+                                                Retirer</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
+                            <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>

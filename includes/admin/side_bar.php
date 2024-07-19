@@ -101,12 +101,12 @@
 						</a>
 					</li>
 					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow <?= ($page=="___services")?'active':'' ?>">
+						<a href="#" class="dropdown-toggle no-arrow <?= ($page=="___services")?'active':'' ?>">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Nos services</span>
 						</a>
 					</li>
 					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow <?= ($page=="___blog")?'active':'' ?>">
+						<a href="#" class="dropdown-toggle no-arrow <?= ($page=="___blog")?'active':'' ?>">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Blog</span>
 						</a>
 					</li>
