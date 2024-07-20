@@ -33,7 +33,8 @@ if(!in_array($page,['home','about','service','blog','contact'])){
             }
             #Espace admin
             if($connecter){
-                include('./includes/admin/pre-loader.php');
+                //include('./includes/admin/pre-loader.php');
+                if($page == "contact")
                 include('./includes/admin/header.php');
                 include('./includes/admin/side_bar.php');
             }

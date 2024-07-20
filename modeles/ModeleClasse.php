@@ -27,6 +27,13 @@ class ModeleClasse
         return $result;
     }
 
+    static function changeStatus($table, $status, $id)
+    {
+        global $connect;
+        $query = $connect->query("UPDATE " . $table . " SET statut =  " . $status . " WHERE id = " . $id );
+        $connect->query($query);
+
+    }
     static function delete($id, $table)
     {
         global $connect;

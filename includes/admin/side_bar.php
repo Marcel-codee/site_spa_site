@@ -100,6 +100,16 @@
 							<span class="micon dw dw-invoice"></span><span class="mtext">Employés</span>
 						</a>
 					</li>
+                    <li>
+                        <a href="<?= LINK ?>entreprise" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-invoice"></span><span class="mtext">Entreprise</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= LINK ?>presentation" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-invoice"></span><span class="mtext">Presentation</span>
+                        </a>
+                    </li>
 					<li>
 						<a href="invoice.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Nos services</span>

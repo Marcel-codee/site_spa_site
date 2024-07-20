@@ -1,5 +1,33 @@
 <?php
 
+function __files($type){
+    if(isset($_FILES[$type]['name'])){
+        /* Getting file name */
+        $filename = $_FILES[$type]['name'];
+
+        /* Location */
+        $location = 'upload/'.$filename;
+        $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
+        $imageFileType = strtolower($imageFileType);
+
+        /* Valid extensions */
+        $valid_extensions = array("jpg","jpeg","png", "pdf", "docx");
+
+        $response = 0;
+        /* Check file extension */
+        if(in_array(strtolower($imageFileType), $valid_extensions)) {
+            /* Upload file */
+            if(move_uploaded_file($_FILES[$type]['tmp_name'],$location)){
+                $response = $location;
+            }
+        }
+
+        echo $response;
+        return $_FILES[$type]['name'];
+    }
+
+}
+
 function testReq_LOGIN()
 {
    if(!empty($_SESSION['error'])) : ?>
