@@ -41,5 +41,18 @@
 	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="<?= LINK?>assets/admin/vendors/scripts/dashboard.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+	
+	<?php if(in_array($page,['__services','__type_services'])):?>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/vfs_fonts.js"></script>
+	<!-- Datatable Setting js -->
+	<script src="<?= LINK?>assets/admin/vendors/scripts/datatable-setting.js"></script>
+	<?php endif;?>
 </body>
 </html>

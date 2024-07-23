@@ -22,7 +22,7 @@ if (!empty($_GET['page'])) {
 
 
 
-if(!in_array($page,['home','about','service','blog','contact'])){
+if(!in_array($page,['home','about','service','blog','contact','detailService'])){
     $controllersPagesAdmin = scandir('./'.'controllers'.'/admin');
     $viewsPagesAdmin = scandir('./'.'views'.'/admin');
     $connecter=isset($_SESSION['userConnect']['login']);
@@ -63,10 +63,13 @@ if(!in_array($page,['home','about','service','blog','contact'])){
         #Espace visitor
         require_once('./controllers/visitor/' . $page . '.controller.php');
         require_once('./controllers/visitor/caroussel.controller.php');
+        require_once('./controllers/visitor/brand.controller.php');
         include('./includes/visitor/head.php');
         include ('./includes/visitor/brand.php');
         include ('./includes/visitor/navbar.php');
-        include ('./includes/visitor/caroussel.php');
+        if ($page!= 'detailService') {
+            include ('./includes/visitor/caroussel.php');
+        }
         require_once('./views/visitor/'. $page . '.view.php');
         include('./includes/visitor/footer.php');
         die();

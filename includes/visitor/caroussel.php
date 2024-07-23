@@ -1,6 +1,6 @@
 <!-- Carousel Start -->
 <div class="container-fluid header-carousel px-0 mb-5">
-    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <?php foreach($listArticle as $i => $article): ?>
                 <div class="carousel-item <?php if($i==0) echo 'active'  ?>">

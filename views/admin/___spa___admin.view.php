@@ -24,6 +24,12 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">S.P.A technologie</h2>
 						</div>
+						<?php if (!empty($error)): ?>
+						<div class="alert alert-danger p-1"><?= $error ?></div>
+						<?php elseif (!empty($success)): ?>
+							<div class="alert alert-success p-1"><?= $success ?></div>
+						<?php else: ?>
+						<?php endif; ?>
 						<form action="" method="POST">
 							<div class="input-group custom">
 								<input type="text" name="Login" class="form-control form-control-lg" placeholder="Login">

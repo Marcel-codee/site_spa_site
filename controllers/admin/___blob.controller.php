@@ -49,7 +49,6 @@ function deleteImage($filePath)
 
 if (!empty($_POST) && empty($_GET['id'])) :
     extract($_POST);
-    var_dump($_POST);
     try {
         // Téléchargez l'image et obtenez le chemin du fichier
         if (isset($_FILES['Image'])) {
@@ -58,7 +57,7 @@ if (!empty($_POST) && empty($_GET['id'])) :
         }
         $_POST['Identreprise'] = 1;
         // Ajoutez l'article avec le chemin de l'image
-        ModeleClasse::add("article", $_POST);
+        ModeleClasse::add("actualite", $_POST);
         $success = "article ajouté avec succès";
     } catch (Throwable $th) {
         return $error = $th->getMessage();
@@ -68,14 +67,14 @@ endif;
 
 try {
     $listArticle = [];
-    $read = ModeleClasse::getall("article");
+    $read = ModeleClasse::getall("actualite");
     foreach ($read as $row) {
         $object = [
             'id' => $row['id'],
-            'Titre' => $row['Titre'],
-            'Contenu' => $row['Contenu'],
-            'Detail_Contenu' => $row['Detail_Contenu'],
-            'Image' => $row['Image']
+            'Titre' => $row['titre'],
+            'Contenu' => $row['contenu'],
+            'Detail_Contenu' => $row['detail_contenu'],
+            'Image' => $row['image']
         ];
         array_push($listArticle, $object);
     }
@@ -94,7 +93,7 @@ if (!empty($_GET["id"])) :
                 $_POST['Image'] = $imagePath; // Ajoutez le chemin de l'image au tableau POST
             }
             try {
-                ModeleClasse::update('article', $_POST, $explode[1]);
+                ModeleClasse::update('actualite', $_POST, $explode[1]);
                 $success = "Mise à jour effectuée avec succès";
                 header('location:' . LINK . '___blob');
             } catch (Throwable $th) {
@@ -108,11 +107,11 @@ if (!empty($_GET["id"])) :
     elseif ($explode[0] == 'del') :
         try {
             // Récupérer l'article à supprimer pour obtenir le chemin de l'image
-            $article = ModeleClasse::getone($explode[1],'article');
+            $article = ModeleClasse::getone($explode[1],'actualite');
             if ($article && !empty($article['Image'])) {
                 deleteImage($article['Image']);
             }
-            ModeleClasse::delete($explode[1], 'article');
+            ModeleClasse::delete($explode[1], 'actualite');
             $success = "Suppression effectuée avec succès";
             header('location:' . LINK . '___blob');
         } catch (Throwable $th) {

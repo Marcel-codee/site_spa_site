@@ -1,8 +1,8 @@
 <div class="right-sidebar">
 		<div class="sidebar-title">
 			<h3 class="weight-600 font-16 text-blue">
-				Layout Settings
-				<span class="btn-block font-weight-400 font-12">User Interface Settings</span>
+				Fenêtre de réglage
+				<span class="btn-block font-weight-400 font-12">Utilisateur d'interface de reglage</span>
 			</h3>
 			<div class="close-sidebar" data-toggle="right-sidebar-close">
 				<i class="icon-copy ion-close-round"></i>
@@ -10,16 +10,16 @@
 		</div>
 		<div class="right-sidebar-body customscroll">
 			<div class="right-sidebar-body-content">
-				<h4 class="weight-600 font-18 pb-10">Header Background</h4>
+				<h4 class="weight-600 font-18 pb-10">Arrière plan d'entête</h4>
 				<div class="sidebar-btn-group pb-30 mb-10">
-					<a href="javascript:void(0);" class="btn btn-outline-primary header-white active">White</a>
-					<a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Dark</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary header-white active">Blanc</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Noir</a>
 				</div>
 
-				<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+				<h4 class="weight-600 font-18 pb-10">Arrière plan du sidebar</h4>
 				<div class="sidebar-btn-group pb-30 mb-10">
-					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">White</a>
-					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">Blanc</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Noir</a>
 				</div>
 
 				<h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
@@ -67,7 +67,7 @@
 				</div>
 
 				<div class="reset-options pt-30 text-center">
-					<button class="btn btn-danger" id="reset-settings">Reset Settings</button>
+					<button class="btn btn-danger" id="reset-settings">Reinitialiser les réglages</button>
 				</div>
 			</div>
 		</div>
@@ -86,33 +86,28 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li>
-						<a href="<?= LINK ?>___spa" class="dropdown-toggle no-arrow">
+						<a href="<?= LINK ?>___dashboard" class="dropdown-toggle no-arrow <?= ($page=="___spa")?'active':'' ?>">
 							<span class="micon dw dw-diagram"></span><span class="mtext">S.P.A TECHNOLOGY</span>
 						</a>
 					</li>
 					<li>
-						<a href="chat.html" class="dropdown-toggle no-arrow">
+						<a href="<?= LINK ?>___postes" class="dropdown-toggle no-arrow <?= ($page=="___postes" || $page=="___add___postes")?'active':'' ?>">
 							<span class="micon dw dw-chat3"></span><span class="mtext">Postes</span>
 						</a>
 					</li>
 					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow">
+						<a href="<?= LINK ?>___employes" class="dropdown-toggle no-arrow <?= ($page=="___employes" || $page=="___add___employes")?'active':'' ?>">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Employés</span>
 						</a>
 					</li>
 					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow">
+						<a href="<?= LINK ?>__services" class="dropdown-toggle no-arrow <?= ($page=="___services")?'active':'' ?>">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Nos services</span>
 						</a>
 					</li>
 					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow">
+						<a href="<?= LINK ?>___blob" class="dropdown-toggle no-arrow <?= ($page=="___blob")?'active':'' ?>">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Blog</span>
-						</a>
-					</li>
-					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">Nos services</span>
 						</a>
 					</li>
 				</ul>

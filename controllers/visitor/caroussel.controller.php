@@ -6,12 +6,12 @@ use App\modeles\ModeleClasse;
 try {
     $i=0;
     $listArticle = [];
-    $read = ModeleClasse::getall("article");
+    $read = ModeleClasse::getall("actualite");
     foreach ($read as $row) {
         $object = [
-            'Titre' => $row['Titre'],
-            'Contenu' => $row['Contenu'],
-            'Image' => $row['Image']
+            'Titre' => $row['titre'],
+            'Contenu' => $row['contenu'],
+            'Image' => $row['image']
         ];
         array_push($listArticle, $object);
     }
