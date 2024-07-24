@@ -1,9 +1,17 @@
+<?php
+    if(!empty($TabPresentaion) && !empty($TabEntreprise))
+    {
+
+?>
+
+<link href="<?= LINK ?>assets/visitor/css/style1.css" rel="stylesheet">
+
 <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3">Have Any Query? Feel Free To Contact Us</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
+                <h1 class="display-6 mb-3"><?= $TabPresentaion[0]['titre']; ?></h1>
+                <p class="mb-5"><?= $TabPresentaion[0]['contenu']; ?></p>
             </div>
             <div class="row contact-info position-relative g-0 mb-5">
                 <div class="col-lg-6">
@@ -12,8 +20,8 @@
                             <i class="bi bi-phone text-dark"></i>
                         </div>
                         <div class="ms-3">
-                            <h5 class="text-white">Call Us</h5>
-                            <h2 class="text-white mb-0">+012 345 67890</h2>
+                            <h5 class="text-white">Contactez nous sur</h5>
+                            <h2 class="text-white mb-0">+224 <?= $TabEntreprise[0]['contact']; ?></h2>
                         </div>
                     </a>
                 </div>
@@ -23,15 +31,20 @@
                             <i class="bi bi-envelope text-dark"></i>
                         </div>
                         <div class="ms-3">
-                            <h5 class="text-white">Mail Us</h5>
-                            <h2 class="text-white mb-0">info@example.com</h2>
+                            <h5 class="text-white">Envoyez-nous un mail</h5>
+                            <h2 class="text-white mb-0"><?= $TabEntreprise[0]['email']; ?></h2>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <p class="mb-4">
+                        <?= $TabPresentaion[0]['detail_contenu']; ?>
+                    </p>
+
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -64,13 +77,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <iframe class="w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.412791889976!2d-13.646469224471257!3d9.559638790524446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6a3b364a52d%3A0x824a4f0a787308d9!2sStation%20Shell%20Bonfi%20Auto%20Route!5e0!3m2!1sen!2s!4v1713235225668!5m2!1sen!2s"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-                </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+
+<?php
+    }

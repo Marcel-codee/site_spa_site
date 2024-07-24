@@ -6,8 +6,7 @@
 					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
 						<div class="pd-20 card-box height-100-p">
 							<div class="bg-dark" style="height: 200px;">
-								<img src="<?=LINK?>upload/<?=$Requete['image']?>" alt="" class="" height="200px">
-								
+								<img src="<?=LINK?>uploads/<?=$Requete['image']?>" alt="" class="" height="200px">				
 							</div>
 
 							<div class="profile-info">
@@ -89,7 +88,7 @@
 															</div>
 															<div class="form-group">
 																<label>Email</label>
-																<input class="form-control form-control-lg date-picker" name="email" type="email">
+																<input class="form-control form-control-lg" name="email" type="email">
 															</div>
 															<div class="form-group">
 																<label>Telephone</label>

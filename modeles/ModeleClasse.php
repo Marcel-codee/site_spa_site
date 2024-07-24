@@ -12,6 +12,20 @@ class ModeleClasse
         return $result;
     }
     
+    static function getallDesc($table,$trie)
+    {
+        global $connect;
+        $req = $connect->query("SELECT * FROM " . $table." ORDER BY ". $trie ." DESC");
+        $result = $req->fetchAll();
+        return $result;
+    }
+    static function getallAsc($table,$trie)
+    {
+        global $connect;
+        $req = $connect->query("SELECT * FROM " . $table." ORDER BY ". $trie ." ASC");
+        $result = $req->fetchAll();
+        return $result;
+    }
     static function getall($table)
     {
         global $connect;
@@ -26,6 +40,31 @@ class ModeleClasse
         $result = $req->fetchAll();
         return $result;
     }
+
+        static function getAllJoin3($table1, $table2, $intermediateTable, $table1_id, $table2_id)
+        {
+            global $connect;
+            $query = "SELECT $table1.*, $table2.*
+                      FROM $table1
+                      INNER JOIN $intermediateTable ON $table1.id = $intermediateTable.$table1_id
+                      INNER JOIN $table2 ON $intermediateTable.$table2_id = $table2.id";
+            
+            $req = $connect->query($query);
+            $result = $req->fetchAll();
+            return $result;
+        }
+    
+    
+
+
+    static function getLastInsert($table){
+        global $connect;
+        $req = $connect->prepare("SELECT * FROM " . $table . " ORDER BY id DESC LIMIT 1");
+        $req->execute(); // Exécuter la requête préparée
+        $result = $req->fetch(); // Récupérer le résultat sous forme de tableau associatif
+        return $result;
+    }
+    
 
     static function delete($id, $table)
     {
@@ -81,4 +120,14 @@ class ModeleClasse
         $req = $connect->prepare($names);
         $req->execute($dat);
     }
+
+    
+    static function changeStatus($table, $status, $id)
+    {
+        global $connect;
+        $query = "UPDATE " . $table . " SET status = " . $status . " WHERE id = " . $id;
+        $connect->query($query);
+    }
+    
+    
 }

@@ -41,9 +41,12 @@ if (empty($_GET['id'])) {
         try {
             // Ajout des données dans la base de données
             $ajout = ModeleClasse::add('service', $_POST);
+
+            header('location:'.LINK.'__services');
         } catch (\Throwable $th) {
             // Gestion des erreurs
             echo "Erreur : " . $th->getMessage();die();
+            die();die();
         }
     }
 }
@@ -89,4 +92,3 @@ if (!empty($_GET['id'])) :
         endif;
     endif;
 endif;
-

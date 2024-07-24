@@ -52,7 +52,7 @@
 								<tr>
 									<td class="table-plus"><?=++$i?></td>
 									<td>
-                                        <img src="<?=LINK?>upload/<?=$data['photo']?>" width="50px">
+                                        <img src="<?=LINK?>uploads/<?=$data['photo']?>" width="50px">
                                     </td>
 									<td><?=$data['nom'] ?></td>
 									<td><?=$data['prenom'] ?> </td>
@@ -62,10 +62,10 @@
 									
 									<td>
                                     <?php if($data['status']==1) : ?>
-                                        <a class="btn btn-warning" href="<?= LINK ?>__client/<?= $data['id']?>">Approuvez</a>
+                                        <a class="btn btn-warning" href="<?= LINK ?>__client/<?= $data['idservice']?>-<?= $data['idclient']?>">Approuvez</a>
                                     </td>
                                     <?php endif; if($data['status']==2) : ?>
-                                        <span class="info info-success"> Inscrit </span>
+                                        <span class="alert alert-success"> Inscrit </span>
                                     <?php endif;?>
                                     <td>
 										<div class="dropdown">

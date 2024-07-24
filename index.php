@@ -7,6 +7,9 @@ include './config/db.php';
 include './Autoloader.php';
 include './functions/functions.php';
 
+$success = "";
+$error = "";
+
 Autoloader::register();
 if (!empty($_GET['page'])) {
     $page = $_GET['page'];
@@ -19,7 +22,7 @@ if (!empty($_GET['page'])) {
 
 
 
-if(!in_array($page,['home','about','service','blog','contact'])){
+if(!in_array($page,['home','about','service','blog','contact','detailService','formation'])){
     $controllersPagesAdmin = scandir('./'.'controllers'.'/admin');
     $viewsPagesAdmin = scandir('./'.'views'.'/admin');
     $connecter=isset($_SESSION['userConnect']['login']);
@@ -59,10 +62,14 @@ if(!in_array($page,['home','about','service','blog','contact'])){
     if(FileExist($page,[$controllersPagesVisitor,$viewsPagesVisitor])){
         #Espace visitor
         require_once('./controllers/visitor/' . $page . '.controller.php');
+        require_once('./controllers/visitor/caroussel.controller.php');
+        require_once('./controllers/visitor/brand.controller.php');
         include('./includes/visitor/head.php');
         include ('./includes/visitor/brand.php');
         include ('./includes/visitor/navbar.php');
-        include ('./includes/visitor/caroussel.php');
+        if ($page!= 'detailService') {
+            include ('./includes/visitor/caroussel.php');
+        }
         require_once('./views/visitor/'. $page . '.view.php');
         include('./includes/visitor/footer.php');
         die();
