@@ -74,6 +74,15 @@ class ModeleClasse
         return $result;
     }
     
+    static function getallByname($name, $table, $value)
+    {
+        global $connect;
+        $req = $connect->prepare("SELECT * FROM " . $table . " WHERE " . $name . "= ?");
+        $req->execute([$value]);
+        $result = $req->fetchAll();
+        return $result;
+    }
+    
     // Se connecter
     static function loginUser($table, $champ1, $value1, $champ2, $value2)
     {

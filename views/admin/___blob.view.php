@@ -1,6 +1,26 @@
 <div class="mobile-menu-overlay"></div>
 
-<div class="main-container">
+<div class="main-container m-0">
+    <div class="min-height-200px">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="title">
+                        <h4>Ajout d'un admin</h4>
+                    </div>
+                    <nav aria-label="breadcrumb" role="navigation">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="<?= LINK ?>___profile">Liste admin</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ajout d'un admin</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container" style="margin-top:-10%;">
     <div class="pd-ltr-20">
         <div class="card-box mb-30 p-4">
             <div class="d-flex justify-content-end">
