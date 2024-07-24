@@ -14,7 +14,7 @@
                     <a href="<?= LINK ?>home" class="nav-item nav-link active">Accueil</a>
                     <a href="<?= LINK ?>about" class="nav-item nav-link">A Propos!</a>
                     <a href="<?= LINK ?>service" class="nav-item nav-link">Services</a>
-                    <a href="<?= LINK ?>blog" class="nav-item nav-link">Blog</a>
+                    <!-- <a href="<?= LINK ?>blog" class="nav-item nav-link">Blog</a> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
                         <div class="dropdown-menu bg-light m-0">
