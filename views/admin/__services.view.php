@@ -242,12 +242,12 @@ include './includes/admin/side_bar.php';
                                                         
                                                         <div class="html-editor pd-20  mb-30">
                                                             <h4 class="h4 text-blue">Contenue du service</h4>
-                                                            <textarea name="contenu" class="textarea_editor form-control border-radius-0"  row="2" placeholder="Enter text ..."> <?=$data[3] ?></textarea>
+                                                            <textarea name="contenu" class="textarea_editor form-control border-radius-0"  row="2" placeholder="Enter text ..."> <?=$data['contenu'] ?></textarea>
                                                         </div>
                                                         <div class="form-group d-flex flex-column justify-content-center ">
                                                                 <label class="col-sm-12 col-md-6 col-form-label">Detail du contenu</label>
                                                                 <div class="col-sm-12 col-md-12">
-                                                                    <textarea name="detail_contenu" id="" class="form-control w-100" cols="50" rows="10"><?=$data[4] ?></textarea>
+                                                                    <textarea name="detail_contenu" id="" class="form-control w-100" cols="50" rows="10"><?=$data['detail_contenu'] ?></textarea>
                                                                 </div>
                                                             </div>
                                                     </div>

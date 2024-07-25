@@ -12,16 +12,20 @@
 							<div class="profile-info">
                                 <br>
                                 <br>
-								<h5 class="mb-20 h5 text-blue">Information sur la formation</h5>
+                                <br>
+                                <br>
+								<h5 class="mb-20 h5 text-blue">Information sur <?php if ($Requete['idtype_service']==$type['id']): echo "la formation";else: echo "l'application";endif;?></h5>
 								<ul>
 									<li>
-										<span>Date de debut</span>
+										<span>Date de <?php if ($Requete['idtype_service']==$type['id']): echo "debut";else: echo "lancement";endif;?></span>
 										<?=$Requete['dateDebut']?>
 									</li>
-									<li>
-										<span>Durée</span>
-										<?=$Requete['duree']?> mois
-									</li>
+									<?php if ($Requete['idtype_service']==$type['id']):?>
+										<li>
+											<span>Durée</span>
+											<?=$Requete['duree']?> mois
+										</li>
+									<?php endif;?>
 									<li>
 										<span>Cout</span>
 										<?=$Requete['cout']?> GNF
@@ -51,7 +55,7 @@
 											<a class="nav-link" data-toggle="tab" href="#tasks" role="tab">Détail Contenue</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">S'inscrire</a>
+											<a class="nav-link" data-toggle="tab" href="#setting" role="tab"><?php if ($Requete['idtype_service']==$type['id']): echo "S'inscrire";else: echo "commander";endif;?></a>
 										</li>
 									</ul>
 									<div class="tab-content">
@@ -75,7 +79,7 @@
 														<li class="weight-500 w-100">
 															<h4 class="text-blue h5 mb-20">Formulaire d'inscription</h4>
 															<div class="form-group">
-																<label>Titre de la Formation</label>
+																<label> <?php if ($Requete['idtype_service']==$type['id']): echo "Titre de la Formation";else: echo "Nom de l'application";endif;?></label>
 																<input class="form-control form-control-lg" disabled  type="text" value="<?=$Requete['titre']?>">
 															</div>
 															<div class="form-group">

@@ -12,8 +12,11 @@ if (!empty($_GET['id'])) :
 
                 $Requete = ModeleClasse::getoneByname('id','service',$id);
                // $update = ModeleClasse::update('service', $_POST, $id);
-
+                
+                $type = ModeleClasse::getoneByname('libelle','type_service','Formation');
                 //apres suppression on retourne a la page __ services  pour voir le changement
+               
+                
                
             } catch (\Throwable $th) {
                 //throw $th;

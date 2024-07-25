@@ -15,15 +15,7 @@
                     <a href="<?= LINK ?>about" class="nav-item nav-link">A Propos!</a>
                     <a href="<?= LINK ?>service" class="nav-item nav-link">Services</a>
                     <a href="<?= LINK ?>blog" class="nav-item nav-link">Blog</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
-                        <div class="dropdown-menu bg-light m-0">
-                            <a href="feature.html" class="dropdown-item">Informatique</a>
-                            <a href="team.html" class="dropdown-item">Developpement</a>
-                            <a href="testimonial.html" class="dropdown-item">Marketing Digital</a>
-                            <a href="appoinment.html" class="dropdown-item">Autres</a>
-                        </div>
-                    </div>
+                    <a href="<?= LINK ?>formation" class="nav-item nav-link " >Formations</a>
                     <a href="<?= LINK ?>contact" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="ms-auto d-none d-lg-flex">

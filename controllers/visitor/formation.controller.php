@@ -28,7 +28,6 @@ if (!empty($_GET)) :
                         array_push($tab,$objet);
                     endif;
                 endforeach;
-                deb($tab);
             } catch (\Throwable $th) {
                 //throw $th;
             }
