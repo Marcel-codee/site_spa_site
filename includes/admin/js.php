@@ -44,6 +44,8 @@
 	
 	
 	<?php if(in_array($page,['__services','__type_services'])):?>
+	<script src="<?= LINK?>assets/admin/vendors/scripts/script.min.js"></script>
+	<script src="<?= LINK?>assets/admin/vendors/scripts/script.min.js"></script>
 	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
 	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
 	<script src="<?= LINK?>assets/admin/src/plugins/datatables/js/buttons.print.min.js"></script>

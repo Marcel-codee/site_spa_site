@@ -100,10 +100,31 @@
 							<span class="micon dw dw-invoice"></span><span class="mtext">Employés</span>
 						</a>
 					</li>
-					<li>
-						<a href="<?= LINK ?>__services" class="dropdown-toggle no-arrow <?= ($page=="___services")?'active':'' ?>">
-							<span class="micon dw dw-invoice"></span><span class="mtext">Nos services</span>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-edit2"></span><span class="mtext">Services <span class="badge bg-danger badge-light">
+								<?php
+								global $connect;  // Assurez-vous que $connect est correctement initialisé
+
+								try {
+									$query = "SELECT count(*) as total FROM `service_detient_client` WHERE `status` = 1";
+									$stmt = $connect->prepare($query);
+									$stmt->execute();
+									$result = $stmt->fetch(PDO::FETCH_ASSOC);
+									$count = $result['total'];
+									echo $count;
+								} catch (PDOException $e) {
+									echo "Erreur: " . $e->getMessage();
+								}
+								?>
+							</span></span>
 						</a>
+
+						<ul class="submenu">
+							<li><a href="<?= LINK ?>__services" class="<?= ($page=="__services" )?'active':'' ?>">Services</a></li>
+							<li><a href="<?= LINK ?>__type_services" class="<?= ($page=="__type_services")?'active':'' ?>">Type_service</a></li>
+							<li><a href="<?= LINK ?>__client" class=" <?= ($page=="__client" )?'active':'' ?>">Client_service <span class="badge bg-danger badge-light"><?= $count ?></span></a></li>
+						</ul>
 					</li>
 					<li>
 						<a href="<?= LINK ?>___blob" class="dropdown-toggle no-arrow <?= ($page=="___blob")?'active':'' ?>">

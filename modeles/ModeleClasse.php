@@ -19,6 +19,13 @@ class ModeleClasse
         $result = $req->fetchAll();
         return $result;
     }
+    static function getallAsc($table,$trie)
+    {
+        global $connect;
+        $req = $connect->query("SELECT * FROM " . $table." ORDER BY ". $trie ." ASC");
+        $result = $req->fetchAll();
+        return $result;
+    }
     static function getall($table)
     {
         global $connect;
@@ -52,7 +59,7 @@ class ModeleClasse
 
     static function getLastInsert($table){
         global $connect;
-        $req = $connect->prepare("SELECT * FROM " . $table . " ORDER BY created_at DESC LIMIT 1");
+        $req = $connect->prepare("SELECT * FROM " . $table . " ORDER BY id DESC LIMIT 1");
         $req->execute(); // Exécuter la requête préparée
         $result = $req->fetch(); // Récupérer le résultat sous forme de tableau associatif
         return $result;

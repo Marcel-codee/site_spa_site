@@ -3,7 +3,7 @@ use App\modeles\ModeleClasse;
 
 try {
     $client = [];
-    $requ = ModeleClasse::getall("service_detient_client");
+    $requ = ModeleClasse::getallAsc("service_detient_client",'status');
 
     foreach ($requ as $data) :
         $clients =  ModeleClasse::getone($data['idclient'],"client");
@@ -16,7 +16,7 @@ try {
             "photo"=>$clients['photo'],
             "telephone"=>$clients['telephone'],
             "email"=>$clients['email'],
-            "status"=>$clients['status'],
+            "status"=>$data['status'],
             "titre"=>$service['titre']
         ];
         array_push($client, $objet);
@@ -28,17 +28,24 @@ try {
 
 
 if (!empty($_GET['id'])) {
-    if (!empty($_POST)) {
-        // Téléchargement du fichier et obtention du chemin
-        extract($_POST);
+    extract($_GET);
+    if (str_contains($id, '-')) :
+
+        //explode nous retourne un array c'est a dir un tableau d'elements
+        $explode = explode('-', $id);
+        //deb($explode);
+        //on prends le deuxieme element (qui est l'id) de $explode pour stocker dans la variable $ID
+        $idservice = $explode[0];
+        $idclient = $explode[1];
         try {
           
-            // Ajout des données dans la base de données
-           ModeleClasse::changeStatus('service_detient_client',2,$id);
+            global $connect;
+            $query = "UPDATE `service_detient_client` SET `status` = '2' WHERE `service_detient_client`.`idservice` = ".$idservice." AND `service_detient_client`.`idclient` = ".$idclient;
+            $connect->query($query);
             header('location:' . LINK . '__client');
         } catch (\Throwable $th) {
             // Gestion des erreurs
             echo "Erreur : " . $th->getMessage();die();
         }
-    }
+    endif;
 }

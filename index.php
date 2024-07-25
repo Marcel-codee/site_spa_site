@@ -22,7 +22,7 @@ if (!empty($_GET['page'])) {
 
 
 
-if(!in_array($page,['home','about','service','blog','contact','detailService'])){
+if(!in_array($page,['home','about','service','blog','contact','detailService','formation'])){
     $controllersPagesAdmin = scandir('./'.'controllers'.'/admin');
     $viewsPagesAdmin = scandir('./'.'views'.'/admin');
     $connecter=isset($_SESSION['userConnect']['login']);
