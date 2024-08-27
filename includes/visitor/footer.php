@@ -1,93 +1,166 @@
-<!-- Footer Start -->
-<div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row g-5 py-5">
-            <div class="col-lg-6 pe-lg-5">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="h1 text-primary mb-0">Lab<span class="text-white">sky</span></h1>
-                </a>
-                <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue,
-                    iaculis id elit eget, ultrices pulvinar tortor.</p>
-                <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
-                <div class="d-flex mt-4">
-                    <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-6 ps-lg-5">
-                <div class="row g-5">
-                    <div class="col-sm-6">
-                        <h4 class="text-light mb-4">Quick Links</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Our Services</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Support</a>
-                    </div>
-                    <div class="col-sm-6">
-                        <h4 class="text-light mb-4">Popular Links</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Our Services</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Support</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <h4 class="text-light mb-4">Newsletter</h4>
-                        <div class="w-100">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-0 py-3 px-4"
-                                    style="background: rgba(255, 255, 255, .1);"
-                                    placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign
-                                    Up</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+<footer class="footer_section bg_default_blue text-white clearfix">
+			<div class="container">
 
+				<div class="footer_brand_area border_bottom clearfix">
+					<div class="row align-items-center justify-content-lg-between">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<div class="brand_logo">
+								<a href="#!">
+									<img src="<?= LINK ?>assets/visitor/assets/images/logo/MDIII_corporate_communication_99.png" srcset="<?= LINK ?>assets/visitor/assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
 
-<!-- Copyright Start -->
-<div class="container-fluid copyright bg-dark text-white-50 py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                <p class="mb-0">Designed by <a href="https://htmlcodex.com">HTML Codex</a><br>Distributed by <a
-                        href="https://themewagon.com">ThemeWagon</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Copyright End -->
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<div class="brands_list">
+								<div class="logo_image">
+									<a href="#!">
+										<img src="<?= LINK ?>assets/visitor/assets/images/brands/img_05.png" alt="logo_not_found">
+									</a>
+								</div>
 
+								<div class="logo_image">
+									<a href="#!">
+										<img src="<?= LINK ?>assets/visitor/assets/images/brands/img_06.png" alt="logo_not_found">
+									</a>
+								</div>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+								<div class="logo_image">
+									<a href="#!">
+										<img src="<?= LINK ?>assets/visitor/assets/images/brands/img_07.png" alt="logo_not_found">
+									</a>
+								</div>
 
+								<div class="logo_image">
+									<a href="#!">
+										<img src="<?= LINK ?>assets/visitor/assets/images/brands/img_08.png" alt="logo_not_found">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-<!-- JavaScript Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= LINK ?>assets/visitor/lib/wow/wow.min.js"></script>
-<script src="<?= LINK ?>assets/visitor/lib/easing/easing.min.js"></script>
-<script src="<?= LINK ?>assets/visitor/lib/waypoints/waypoints.min.js"></script>
-<script src="<?= LINK ?>assets/visitor/lib/counterup/counterup.min.js"></script>
-<script src="<?= LINK ?>assets/visitor/lib/owlcarousel/owl.carousel.min.js"></script>
+				<div class="footer_widget_area clearfix">
+					<div class="row justify-content-lg-between">
+						<div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+							<div class="widget footer_useful_links">
+								<h3 class="footer_widget_title">Liens rapides</h3>
+								<ul class="ul_li_block clearfix">
+									<li><a href="#!">Histoire de l’entreprise</a></li>
+									<li><a href="#!">Équipe exclusive </a></li>
+									<li><a href="#!">Produit récent</a></li>
+									<li><a href="#!">Gagnez des prix</a></li>
+								</ul>
+							</div>
+						</div>
 
-<!-- Template Javascript -->
-<script src="<?= LINK ?>assets/visitor/js/main.js"></script>
-</body>
+						<div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+							<div class="widget footer_useful_links">
+								<h3 class="footer_widget_title">Services</h3>
+								<ul class="ul_li_block clearfix">
+									<li><a href="#!">Design & images de marque</a></li>
+									<li><a href="#!">Conception et impression 3D
+									</a></li>
+									<li><a href="#!">Impression offset</a></li>
+									<li><a href="#!">Impression d’entreprise</a></li>
+								</ul>
+							</div>
+						</div>
 
-</html>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<div class="widget recent_works_list">
+								<h3 class="footer_widget_title">Application web/mobile</h3>
+								<ul class="ul_li_block clearfix">
+									<li>
+										<div class="small_blog clearfix">
+											<a class="item_image" target="_blank" href="blog_details.html">
+												<img src="<?= LINK ?>assets/visitor/assets/images/recent_works/img_01.png" alt="image_not_found">
+											</a>
+											<div class="item_content">
+												<h3 class="item_title">
+													<a target="_blank" href="blog_details.html">
+														Création d'applications web
+													</a>
+												</h3>
+												<span class="post_date"><i class=""></i> Soumettez-nous tous vos besoins de conception de sites web</span>
+											</div>
+										</div>
+									</li>
+
+									<li>
+										<div class="small_blog clearfix">
+											<a class="item_image" target="_blank" href="blog_details.html">
+												<img src="<?= LINK ?>assets/visitor/assets/images/recent_works/img_02.png" alt="image_not_found">
+											</a>
+											<div class="item_content">
+												<h3 class="item_title">
+													<a target="_blank" href="blog_details.html">
+														Création d'application mobile et autres
+													</a>
+												</h3>
+												<span class="post_date"><i class=""></i> Mettez votre idée à la portée de tous</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+							<div class="widget footer_contact_form">
+								<h3 class="footer_widget_title">Contactez-nous</h3>
+								<p class="mb_30">
+									Contactez-nous au besoin
+								</p>
+								<form action="#">
+									<div class="form_item">
+										<input type="email" name="email" placeholder="Enter Votre Email">
+										<button type="submit" class="submit_btn"><i class="far fa-arrow-right"></i></button>
+									</div>
+								</form>
+								<span class="footer_hotline"><i class="far fa-phone"></i> +224 (610) 483 872</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+				<div class="footer_bottom_boxed clearfix">
+					<div class="row align-items-center justify-content-lg-between justify-content-md-between">
+						<div class="col-lg-6 col-md-6">
+							<p class="copyright_text mb-0">© Copyright <?php echo date("Y"); ?> Tous droits réservés <a class="author_links" target="_blank" href="#">MDIII CORPORATE COMMUNICATION</a></p>
+						</div>
+
+						<div class="col-lg-6 col-md-6">
+							<ul class="circle_social_links ul_li_right clearfix">
+								<li>
+									<a class="bg_facebook" href="#!">
+										<i class="fab fa-facebook-f"></i>
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a class="bg_twitter" href="#!">
+										<i class="fab fa-twitter"></i>
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a class="bg_youtube" href="#!">
+										<i class="fab fa-youtube"></i>
+										<i class="fab fa-youtube"></i>
+									</a>
+								</li>
+								<li>
+									<a class="bg_linkedin" href="#!">
+										<i class="fab fa-linkedin"></i>
+										<i class="fab fa-linkedin"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</footer>

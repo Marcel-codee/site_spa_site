@@ -1,76 +1,159 @@
-<!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3">Have Any Query? Feel Free To Contact Us</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
-            </div>
-            <div class="row contact-info position-relative g-0 mb-5">
-                <div class="col-lg-6">
-                    <a href="tel:+0123456789" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-phone text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Call Us</h5>
-                            <h2 class="text-white mb-0">+012 345 67890</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a href="mailto:info@example.com" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-envelope text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Mail Us</h5>
-                            <h2 class="text-white mb-0">info@example.com</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <iframe class="w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.412791889976!2d-13.646469224471257!3d9.559638790524446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd6a3b364a52d%3A0x824a4f0a787308d9!2sStation%20Shell%20Bonfi%20Auto%20Route!5e0!3m2!1sen!2s!4v1713235225668!5m2!1sen!2s"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+<main>
+
+
+			<!-- sidebar mobile menu - start
+			================================================== -->
+			<div class="sidebar-menu-wrapper">
+				<div class="sidebar_mobile_menu">
+
+					<span class="close_btn"><i class="fal fa-times"></i></span>
+
+					<div class="mobile_menu_list clearfix">
+						<ul class="ul_li_block clearfix">
+						<li class="<?php if($page=="home") echo "active";?>"><a href="<?= LINK ?>">Accueil</a></li>
+							<li class="<?php if($page=="about") echo "active"; ?>"><a href="<?= LINK ?>about">A propos</a></li>
+							<li class="dropdown">
+                    <a href="#!" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                        <li class="<?php if($page=="service1") echo "active"; ?>"><a href="service_1.html">Service N°1</a></li>
+						<li class="<?php if($page=="service2") echo "active"; ?>"><a href="service_2.html">Service N°2</a></li>
+						<li class="<?php if($page=="service3") echo "active"; ?>"><a href="#">Service N°3</a></li>
+						<!-- <li class="<?php if($page=="service_details") echo "active"; ?>"><a href="<?= LINK ?>service_details">Details services</a></li> -->
+                    </ul>
+                </li>
+							<li class="<?php if($page=="contact") echo "active"; ?>"><a href="<?= LINK ?>contact">Conatct</a></li>        
+						</ul>
+					</div>
+
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<!-- sidebar mobile menu - end
+			================================================== -->
+
+
+			<!-- breadcrumb_section - start
+			================================================== -->
+			<section class="breadcrumb_section d-flex align-items-center clearfix" data-background="<?= LINK ?>assets/visitor/assets/images/breadcrumb/bg_01.jpg">
+				<div class="container">
+					<div class="row align-items-center justify-content-lg-between">
+						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
+							<h1 class="page_title mb-0">Contactez-nous</h1>
+						</div>
+
+						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
+							<ul class="breadcrumb_nav ul_li_right clearfix">
+								<li><a href="<?= LINK ?>">Accueil</a></li>
+								<li>Contactez-nous</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- breadcrumb_section - end
+			================================================== -->
+
+
+			<!-- contact_section - start
+			================================================== -->
+			<section class="contact_section sec_ptb_130 clearfix">
+				<div class="container">
+					<div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="contact_content">
+								<div class="section_title mb_30 wow fadeInUp2" data-wow-delay=".1s">
+									<h4 class="small_title">Contactez-nous</h4>
+									<h2 class="big_title mb-0">
+                                        Chaque mise à jour pour nous contacter
+									</h2>
+									<span class="biggest_title">Contact</span>
+								</div>
+								<p class="mb_30 wow fadeInUp2" data-wow-delay=".2s">
+									Contactez-nous aujourd'hui pour tout besoin.
+								</p>
+								<ul class="contact_information_list ul_li_block clearfix">
+									<li class="wow fadeInUp2" data-wow-delay=".3s">
+										<div class="item_icon bg_default_orange"><i class="fal fa-map-marker-alt"></i></div>
+										<div class="item_content">
+											<h4>Adresse</h4>
+											<p>KM36, Guinée-conakry</p>
+										</div>
+									</li>
+									<li class="wow fadeInUp2" data-wow-delay=".4s">
+										<div class="item_icon bg_default_yellow"><i class="fal fa-envelope"></i></div>
+										<div class="item_content">
+											<h4>Notre email</h4>
+											<p>md3corporate-communication@gmail.com</p>
+										</div>
+									</li>
+									<li class="wow fadeInUp2" data-wow-delay=".5s">
+										<div class="item_icon bg_default_lightblue"><i class="fal fa-phone"></i></div>
+										<div class="item_content">
+											<h4>Applez-nous</h4>
+											<p>+224 (610) 483 872</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="contact_form">
+								<form id="contact-form" action="#" method="POST">
+									<div class="form_item wow fadeInUp2" data-wow-delay=".1s">
+										<span class="input_title">Nom complet</span>
+										<div class="position-relative">
+											<input id="input_user" type="text" name="name" placeholder="Ecrivez votre nom">
+											<label class="input_icon" for="input_user"><i class="fal fa-user"></i></label>
+										</div>
+									</div>
+
+									<div class="form_item wow fadeInUp2" data-wow-delay=".2s">
+										<span class="input_title">Adresse email</span>
+										<div class="position-relative">
+											<input id="input_email" type="email" name="email" placeholder="Redigez votre Email">
+											<label class="input_icon" for="input_email"><i class="fal fa-envelope"></i></label>
+										</div>
+									</div>
+
+									<div class="form_item wow fadeInUp2" data-wow-delay=".3s">
+										<span class="input_title">Numero de telephone</span>
+										<div class="position-relative">
+											<input id="input_phone" type="tel" name="phone" placeholder="Ecrivez votre numero de telephone">
+											<label class="input_icon" for="input_phone"><i class="fal fa-phone"></i></label>
+										</div>
+									</div>
+
+									<div class="form_item wow fadeInUp2" data-wow-delay=".4s">
+										<span class="input_title">Laisser un message</span>
+										<textarea name="message" placeholder="Redigez-votre message"></textarea>
+									</div>
+
+									<button type="submit" class="custom_btn bg_default_orange wow fadeInUp2" data-wow-delay=".5s">
+										Envoyer un message
+										<span><i class="fal fa-arrow-right"></i></span>
+									</button>
+									<p class="ajax-response"></p>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- contact_section - end
+			================================================== -->
+
+
+			<!-- google map - start
+			================================================== -->
+			<!-- <div class="map_section wow fadeIn clearfix" data-wow-delay=".1s">
+				<div id="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="12" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia." data-mlat="40.701083" data-mlon="-74.1522848">
+				</div>
+			</div> -->
+			<!-- google map - end
+			================================================== -->
+
+
+		</main>

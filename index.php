@@ -8,70 +8,60 @@ include './Autoloader.php';
 include './functions/functions.php';
 
 Autoloader::register();
+$page='home';
 if (!empty($_GET['page'])) {
     $page = $_GET['page'];
-} else {
-    $page = 'home';
 }
 // if($page!='connexion'){
 //     is_connected();
 // }
-
-
-if(!in_array($page,['home','about','service','blog','contact'])){
+#Toutes les pages qu'un visiteur peut acceder
+$pages_visitor =[
+    'home',
+    'about',
+    'contact',
+    'service1',
+    'service2',
+    // 'service3',
+    // 'service_details'
+];
+#Toutes les pages admins
+$pages_admin =[
+    'dashboard'
+];
+if(in_array($page,$pages_admin)){
     $controllersPagesAdmin = scandir('./'.'controllers'.'/admin');
     $viewsPagesAdmin = scandir('./'.'views'.'/admin');
     $connecter=isset($_SESSION['userConnect']['login']);
     if(FileExist($page,[$controllersPagesAdmin,$viewsPagesAdmin])){
         require_once('./controllers/admin/' . $page . '.controller.php');
-        include('./includes/admin/head.php');
-        if($page=="___spa___admin" || $connecter){
-            if($connecter && $page=="___spa___admin"){
-                #Redirige si dejà connecter et il veut se connecter à nouveau
-                header('Location:' . LINK . '___dashboard');
-            }
-            #Espace admin
-            if($connecter){
-                include('./includes/admin/pre-loader.php');
-                include('./includes/admin/header.php');
-                include('./includes/admin/side_bar.php');
-            }
-            require_once('./views/admin/'. $page . '.view.php');
-            if($connecter){
-                include('./includes/admin/footer.php');
-            }
-            include('./includes/admin/js.php');
-            die();
-        }
-        header('Location:' . LINK .'');
+        #Tentative d'accès à une page admin
     }
-    if($connecter){
-        #Erreur 404 pour admin connecté
-        require_once('./controllers/admin/' . "error" . '.controller.php');
-        include('./includes/admin/head.php');
-        require_once('./views/admin/'. "error" . '.view.php');
-        die();
-    }
-}else{
+    #Gerer Erreur 404 pour admin.
+}elseif(in_array($page,$pages_visitor)){
     $controllersPagesVisitor = scandir('./'.'controllers'.'/visitor');
     $viewsPagesVisitor = scandir('./'.'views'.'/visitor');
     if(FileExist($page,[$controllersPagesVisitor,$viewsPagesVisitor])){
+        // deb($page);
         #Espace visitor
         require_once('./controllers/visitor/' . $page . '.controller.php');
         include('./includes/visitor/head.php');
-        include ('./includes/visitor/brand.php');
-        include ('./includes/visitor/navbar.php');
-        include ('./includes/visitor/caroussel.php');
-        require_once('./views/visitor/'. $page . '.view.php');
-        include('./includes/visitor/footer.php');
+        include ('./includes/visitor/backtotop.php');
+        include ('./includes/visitor/preload.php');
+        if($page=="home"){
+            include ('./includes/visitor/header_home.php');
+            require_once('./views/visitor/'. $page . '.view.php');
+            include ('./includes/visitor/footer_home.php');
+        }else{
+            #Autres pages du site
+            include ('./includes/visitor/header.php');
+            require_once('./views/visitor/'. $page . '.view.php');
+            include ('./includes/visitor/footer.php');
+        }
+        include ('./includes/visitor/js.php');
         die();
     }
+}else{
+    #Erreur 404 pour visiteur (Redirection à l'accueil)
+    header('Location:' . LINK .'');
 }
-#Erreur 404 pour visiteur
-include('./includes/visitor/head.php');
-include ('./includes/visitor/brand.php');
-include ('./includes/visitor/navbar.php');
-include ('./includes/visitor/header.php');
-require_once('./controllers/visitor/error.controller.php');
-require_once('./views/visitor/error.view.php');
-include('./includes/visitor/footer.php');
